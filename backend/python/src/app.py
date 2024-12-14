@@ -62,6 +62,7 @@ def get_recipe():
 
         ingredients = data.get('ingredients', [])
         query = data.get('query', '')
+        # print(ingredients,query)
         
         if not ingredients and not query:
             return jsonify({'status': 'error', 'message': 'At least one of ingredients or query must be provided'}), 400
