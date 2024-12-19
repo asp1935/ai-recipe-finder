@@ -2,10 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(153, 153, 153);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1b1b1b;
+}
 
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+body{
+  background-color: #F8CD21;
 }

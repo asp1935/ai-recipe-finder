@@ -67,7 +67,8 @@ function SearchBar() {
 
   return (
     <>
-      <div className='w-full'>
+    {/* bg-gradient-to-r from-[#F9D126] to-[#EAB70A] */}
+      <div className="w-full min-h-screen pt-20 bg-[url('/home2r.png')] bg-cover " >
         <form onSubmit={handleSubmit} className='w-full flex flex-col items-center gap-10'>
           <input
             type="text"
@@ -76,7 +77,7 @@ function SearchBar() {
             placeholder='Recipe in you mind...'
             onChange={handleChange}
             value={recipeQuery}
-            className='w-[80%] md:w-[40vw] border border-black outline-none px-3 py-2 md:px-5  md:py-4 rounded-full placeholder:font-'
+            className='w-[80%] md:w-[40vw] bg-transparent border-b border-black outline-none px-3 py-2 md:px-5  md:py-4  text-xl placeholder:text-xl placeholder:text-white'
           />
           <div className='relative w-[80%] lg:w-[40vw]   flex flex-col items-center p-4'>
             <>
@@ -99,11 +100,11 @@ function SearchBar() {
                 placeholder='Search Ingredients...'
                 onChange={handleChange}
                 value={inputIngredient}
-                className='w-full bg-transparent outline-none border-b border-black border-opacity-40 focus:border-opacity-100   mt-5 px-1'
+                className='w-full bg-transparent outline-none border-b border-black border-opacity-40 focus:border-opacity-100   mt-5 px-1  text-xl placeholder:text-xl placeholder:text-white'
               />
               <div>
                 {filteredList.length > 0 && (
-                  <div className='flex flex-wrap w-full gap-4 p-2'>
+                  <div className='flex flex-wrap w-full gap-4 p-2 mt-3'>
                     {filteredList.map((ingredent, index) => (
 
                       <div key={index} className='bg-yellow-300 shadow-md rounded-md w-fit h-fit  px-3 py-0.5 flex  items-center gap-2 '>
@@ -120,7 +121,7 @@ function SearchBar() {
 
           <button
             type="submit"
-            className="outline-none border border-black text-xl  px-10 py-3 w-[80%] md:w-[50%] lg:w-[30%] rounded-full bg-search-bt-bg  bg-cover bg-center mt-5"
+            className="outline-none border border-black text-xl  px-10 py-3 w-[80%] md:w-[50%] lg:w-[30%] rounded-full bg-search-bt-g  bg-cover bg-center "
           >
             Search
           </button>
