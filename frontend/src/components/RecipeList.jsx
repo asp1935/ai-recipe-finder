@@ -10,17 +10,17 @@ function RecipeList({ recipeData }) {
     setSelectedRecipe(recipe);
     setViewRecipe(true);
   }
-  
+
   return (
     <div className='relative w-full flex flex-col items-center gap-10 mt-10'>
       {recipeData && recipeData.length > 0 && (
         recipeData.map((recipe, index) => (
 
-          <div key={index} onClick={() => handleViewRecipe(recipe)} className=' relative flex w-[80%] h-[15vw] items-center justify-center gap-5 p-5 rounded-3xl cursor-pointer bg-[#FF9800] bg-opacity-15 backdrop-blur-sm shadow hover:shadow-lg hover:-translate-y-2 transition-transform duration-500'>
-            <div className='w-[25%] h-full'>
+          <div key={index} onClick={() => handleViewRecipe(recipe)} className=' relative flex flex-col lg:flex-row w-[90%] md:w-[80%] min-h-[15vw] items-center justify-center gap-5 p-5 rounded-3xl cursor-pointer bg-[#ffffff] bg-opacity-15 backdrop-blur-sm shadow hover:shadow-lg hover:-translate-y-2 transition-transform duration-500'>
+            <div className='w-[70%] md:w-[50%] lg:w-[25%] h-full'>
               <img src={recipe["image-url"]} alt="" className='w-full h-full object-fill object-center rounded-xl ' />
             </div>
-            <div className='flex flex-col gap-y-3 w-[70%]'>
+            <div className='flex flex-col gap-y-3  md:w-[80%] lg:w-[80%]'>
               <h1 className='capitalize text-2xl font-semibold decoration-yellow-500 underline-offset-4 hover:underline '>{recipe.TranslatedRecipeName}</h1>
               <p><span className='font-medium underline decoration-yellow-400 decoration-2'>Dish From</span> :- {recipe.Cuisine}</p>
               <p><span className='font-medium underline decoration-yellow-400 decoration-2'>Making Time</span> :-{recipe.TotalTimeInMins}</p>
@@ -34,6 +34,30 @@ function RecipeList({ recipeData }) {
       {viewRecipe && (
         <Recipe recipe={selectedRecipe} setViewRecipe={setViewRecipe} />
       )}
+      <div className='absolute w-[30vw] -z-10 top-0 right-0'>
+        <img src='/dish1.png' alt="" className='w-full h-full' />
+
+      </div>
+      <div className='absolute w-[30vw] -z-10 top-1/4 left-0'>
+        <img src='/ingredient1.png' alt="" className='w-full h-full ' />
+
+      </div>
+      <div className='absolute w-[30vw] -z-10 top-1/2 right-0'>
+        <img src="/dish3.png" alt="" className='w-full h-full' />
+
+      </div>
+      <div className='absolute w-[30vw] -z-10 top-1/2 right-0'>
+        <img src="/dish3.png" alt="" className='w-full h-full' />
+
+      </div>
+      <div className='absolute w-[25vw] -z-10 top-3/4 left-0'>
+        <img src="/dish4.png" alt="" className='w-full h-full' />
+
+      </div>
+      <div className='absolute w-[30vw] -z-10 top-0 right-0'>
+
+      </div>
+
     </div>
   )
 }

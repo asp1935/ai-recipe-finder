@@ -67,8 +67,8 @@ function SearchBar() {
 
   return (
     <>
-    {/* bg-gradient-to-r from-[#F9D126] to-[#EAB70A] */}
-      <div className="w-full min-h-screen pt-20 bg-[url('/home2r.png')] bg-cover " >
+    {/* bg-gradient-to-r from-[#F9D126] to-[#EAB70A]  bg-[url('/home2r.png')]*/}
+      <div className="relative w-full min-h-screen pt-20  bg-cover " >
         <form onSubmit={handleSubmit} className='w-full flex flex-col items-center gap-10'>
           <input
             type="text"
@@ -77,9 +77,9 @@ function SearchBar() {
             placeholder='Recipe in you mind...'
             onChange={handleChange}
             value={recipeQuery}
-            className='w-[80%] md:w-[40vw] bg-transparent border-b border-black outline-none px-3 py-2 md:px-5  md:py-4  text-xl placeholder:text-xl placeholder:text-white'
+            className='w-[80%] lg:w-[40vw] bg-transparent border-b border-black outline-none px-3 py-2 md:px-5  md:py-4  text-xl placeholder:text-xl placeholder:text-white'
           />
-          <div className='relative w-[80%] lg:w-[40vw]   flex flex-col items-center p-4'>
+          <div className='relative w-[80%] lg:w-[40vw]   flex flex-col items-center md:p-4'>
             <>
               {recipeingredints && recipeingredints?.length > 0 && (
                 <div className='relative flex flex-wrap w-full  gap-4 p-2'>
@@ -126,8 +126,11 @@ function SearchBar() {
             Search
           </button>
         </form>
+        <div className='absolute -z-10 w-[80vw] sm:w-[60vw] md:w-[40vw]  -left-10 bottom-0 md:bottom-10 '>
+          <img src={'/ingredient2.png'} alt="" className='w-full h-full object-cover '/>
+        </div>
       </div>
-      <RecipeList recipeData={recipeData} />
+      {recipeData.length > 0 && (<RecipeList recipeData={recipeData} />)}
     </>
   )
 }
