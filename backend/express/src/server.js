@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import { app } from './app.js';
 
 
-dotenv.config({path:'/.env'})
+dotenv.config();
 
 app.on("error",(err)=>{
     console.log('Server not able to start');
