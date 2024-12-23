@@ -1,6 +1,6 @@
 flask
 flask-cors
-scikit-learn
+scikit-learn==1.2.2
 pandas
 python-dotenv
 gunicorn
