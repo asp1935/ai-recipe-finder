@@ -5,6 +5,8 @@ import pickle
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from flask_cors import CORS
+import __main__
+
 
 load_dotenv()
 
@@ -39,6 +41,8 @@ class RecipeFinder:
         top_indices = top_indices[:min(len(self.recipe_data), top_n)]
         
         return self.recipe_data.iloc[top_indices]
+
+__main__.RecipeFinder=RecipeFinder
 
 @app.route('/')
 def index():
