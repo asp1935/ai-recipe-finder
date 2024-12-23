@@ -28,7 +28,6 @@ function Home() {
   return (
     <div className="relative w-full min-h-screen flex items-center  text-white">
       <div ref={titleDivRef} className='w-full  md:w-[65%] lg:w-[50%]'>
-        {/* <SearchBar/> */}
         <h1 className='text-[13vw] sm:text-[9vw] md:text-[8vw] lg:text-[6vw] font-heading-cursive text-start font-[500] ml-5 md:ml-16 underline decoration-4 decoration-red-500 underline-offset-8'>Your Ingredients,</h1>
         <h1 className='text-[13vw] sm:text-[9vw] md:text-[8vw] font-heading-cursive text-right mr-10 lg:mr-16 underline decoration-4 decoration-red-500 underline-offset-8'>Our Recipe</h1>
         <h5 className='text-[5vw] sm:text=[3vw] md:text-[3vw] lg:text-[1.5vw] font-[cursive]  text-center md:text-right text-black underline underline-offset-2 decoration-white'  >Cook Better, Smarter with AI</h5>

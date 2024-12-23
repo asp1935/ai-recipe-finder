@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Recipe from './Recipe';
 
 function RecipeList({ recipeData }) {
 
   const [viewRecipe, setViewRecipe] = useState(false);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const listDivRef=useRef(null);
+
+  useEffect(()=>{
+    listDivRef.current.scrollIntoView({behavior:'smooth',block:'start'})
+  },[recipeData])
 
   const handleViewRecipe = (recipe) => {
     setSelectedRecipe(recipe);
@@ -12,11 +17,11 @@ function RecipeList({ recipeData }) {
   }
 
   return (
-    <div className='relative w-full flex flex-col items-center gap-10 mt-10'>
+    <div ref={listDivRef} className='relative w-full flex flex-col items-center gap-10 mt-10'>
       {recipeData && recipeData.length > 0 && (
         recipeData.map((recipe, index) => (
 
-          <div key={index} onClick={() => handleViewRecipe(recipe)} className=' relative flex flex-col lg:flex-row w-[90%] md:w-[80%] min-h-[15vw] items-center justify-center gap-5 p-5 rounded-3xl cursor-pointer bg-[#ffffff] bg-opacity-15 backdrop-blur-sm shadow hover:shadow-lg hover:-translate-y-2 transition-transform duration-500'>
+          <div key={index} onClick={() => handleViewRecipe(recipe)} className=' relative flex flex-col lg:flex-row w-[90%] md:w-[80%] min-h-[15vw] md:h-[15vw] items-center justify-center gap-5 p-5 rounded-3xl cursor-pointer bg-[#ffffff] bg-opacity-15 backdrop-blur-sm shadow hover:shadow-lg hover:-translate-y-2 transition-transform duration-500'>
             <div className='w-[70%] md:w-[50%] lg:w-[25%] h-full'>
               <img src={recipe["image-url"]} alt="" className='w-full h-full object-fill object-center rounded-xl ' />
             </div>
