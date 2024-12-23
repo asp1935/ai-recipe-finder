@@ -10,7 +10,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:8000", "methods": ["POST", "OPTIONS"]}})
+CORS(app, resources={r"/api/*": {"origins": "*", "methods": ["POST", "OPTIONS"]}})
 
 class RecipeFinder:
     def __init__(self, recipe_data, ingredient_vectorizer, query_vectorizer, ingredient_vectors, query_vectors):
@@ -73,9 +73,10 @@ def get_recipe():
         if not isinstance(query, str):
             return jsonify({'status': 'error', 'message': 'Invalid query format, must be a string'}), 400
 
-        # Load the RecipeFinder model securely
         try:
-            with open('./recipe_finder_model.pkl', 'rb') as f:
+            BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+            model_path = os.path.join(BASE_DIR, 'recipe_finder_model.pkl')
+            with open(model_path, 'rb') as f:
                 recipe_finder = pickle.load(f)
                 print(recipe_finder)
         except FileNotFoundError:
@@ -83,7 +84,7 @@ def get_recipe():
         except Exception as e:
             return jsonify({'status': 'error', 'message': f'Error loading model: {str(e)}'}), 500
 
-        # Get recommendations
+        # Get recommended recipes
         recommended_recipes = recipe_finder.find_recipes(user_ingredients=ingredients, user_query=query, top_n=10)
 
         # Convert DataFrame to JSON if valid
