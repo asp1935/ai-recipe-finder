@@ -75,9 +75,9 @@ def get_recipe():
 
         # Load the RecipeFinder model securely
         try:
-            model_path = os.path.join(os.getcwd(), 'model', 'recipe_finder_model.pkl')
-            with open(model_path, 'rb') as f:
+            with open('./recipe_finder_model.pkl', 'rb') as f:
                 recipe_finder = pickle.load(f)
+                print(recipe_finder)
         except FileNotFoundError:
             return jsonify({'status': 'error', 'message': 'Model file not found'}), 500
         except Exception as e:
