@@ -1,0 +1,18 @@
+version: '1.0'
+
+services:
+  python-backend:
+    build:
+      context:./backend/python
+    ports:
+      - "3001:3001"
+    environment:
+      - PYTHON_ENV=production
+  
+  express-backend:
+    build: 
+      context: ./backend/express
+    ports:
+      -"3000:3000"
+    environment:
+      - NODE_ENV=production
