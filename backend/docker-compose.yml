@@ -1,9 +1,8 @@
-version: '1.0'
 
 services:
   python-backend:
     build:
-      context:./backend/python
+      context: ./python
     ports:
       - "3001:3001"
     environment:
@@ -11,7 +10,7 @@ services:
   
   express-backend:
     build: 
-      context: ./backend/express
+      context: ./express
     ports:
       - "3000:3000"
     environment:
