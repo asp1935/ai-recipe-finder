@@ -1,0 +1,25 @@
+# Exclude node_modules (already built into the image)
+node_modules
+
+# Exclude logs
+*.log
+logs/
+*.out
+
+# Exclude environment and sensitive files
+.env
+.env.local
+
+# Exclude Git repository metadata
+.git
+.gitignore
+
+# Exclude Dockerfile and .dockerignore itself (optional)
+Dockerfile
+.dockerignore
+
+# Exclude build and cache files
+dist/
+build/
+cache/
+.tmp/

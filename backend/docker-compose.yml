@@ -7,6 +7,8 @@ services:
       - "3001:3001"
     environment:
       - PYTHON_ENV=production
+      - PY_PORT=${PY_PORT}
+      - PY_CORS_ORIGIN=${PY_CORS_ORIGIN}
   
   express-backend:
     build: 
@@ -15,3 +17,6 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
+      - EX_PORT=${EX_PORT}
+      - ORIGIN_ACCESS_URL=${ORIGIN_ACCESS_URL}
+      - MODEL_API_URL=${MODEL_API_URL}

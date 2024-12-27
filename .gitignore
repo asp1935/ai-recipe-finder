@@ -247,6 +247,8 @@ web_modules/
 .env.production.local
 .env.local
 
+gittoken.txt
+
 # parcel-bundler cache (https://parceljs.org/)
 .parcel-cache
 
