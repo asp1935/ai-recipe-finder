@@ -48,6 +48,7 @@ jobs:
             export PY_CORS_ORIGIN="${{ secrets.PY_CORS_ORIGIN }}"
             export EX_PORT="${{ secrets.EX_PORT }}"
             export ORIGIN_ACCESS_URL="${{ secrets.ORIGIN_ACCESS_URL }}"
+            export MODEL_API_URL="${{ secrets.MODEL_API_URL}}"
 
             # Restart Docker containers
             docker-compose down
