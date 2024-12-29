@@ -20,3 +20,16 @@ services:
       - EX_PORT=${EX_PORT}
       - ORIGIN_ACCESS_URL=${ORIGIN_ACCESS_URL}
       - MODEL_API_URL=${MODEL_API_URL}
+    
+  nginx:
+    image: nginx:latest
+    ports:
+      - "443:443"  #https
+      - "80:80"    #http 
+
+    volumes:
+      - /home/ec2-user/certs:/etc/nginx/certs
+      - ./nginx.conf:/etc/nginx/nginx.conf 
+    
+    depends_on:
+      - express-backend
