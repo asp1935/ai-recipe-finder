@@ -52,13 +52,13 @@ function Recipe({ recipe, setViewRecipe }) {
                         </div>
 
                         <div className='absolute z-0 -top-16 left-0 w-[20vw] md:w-[10vw] '>
-                            <img src="/ingredient7.png" alt="" />
+                            <img src="https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/flcqaleo9hlsbhyldb9j" alt="" />
                         </div>
                         <div className='absolute z-0 top-1/4 right-0 w-[18vw] md:w-[10vw] '>
-                            <img src="/ingredient8.png" alt="" />
+                            <img src="https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/u0r0pbuwwx0tyu83kpuk" alt="" />
                         </div>
                         <div className='absolute z-0 bottom-0 left-0 w-[20vw] md:w-[10vw] '>
-                            <img src="/ingredient9.png" alt="" className='transform scale-x-[-1]' />
+                            <img src="https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/qxbthmgcy0yd44ixq9up" alt="" className='transform scale-x-[-1]' />
                         </div>
                     </div>
 

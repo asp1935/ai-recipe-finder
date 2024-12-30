@@ -40,23 +40,23 @@ function RecipeList({ recipeData }) {
         <Recipe recipe={selectedRecipe} setViewRecipe={setViewRecipe} />
       )}
       <div className='absolute w-[30vw] -z-10 top-0 right-0'>
-        <img src='/dish1.png' alt="" className='w-full h-full' />
+        <img src='https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/zymxv6pjoziasgv7veh6' alt="" className='w-full h-full' />
 
       </div>
       <div className='absolute w-[30vw] -z-10 top-1/4 left-0'>
-        <img src='/ingredient1.png' alt="" className='w-full h-full ' />
+        <img src='https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/m1zf6cl03jekyjo6sigm' alt="" className='w-full h-full ' />
 
       </div>
       <div className='absolute w-[30vw] -z-10 top-1/2 right-0'>
-        <img src="/dish3.png" alt="" className='w-full h-full' />
+        <img src="https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/blzkq6htzjmftioogz8b" alt="" className='w-full h-full' />
 
       </div>
       <div className='absolute w-[30vw] -z-10 top-1/2 right-0'>
-        <img src="/dish3.png" alt="" className='w-full h-full' />
+        <img src="https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/blzkq6htzjmftioogz8b" alt="" className='w-full h-full' />
 
       </div>
       <div className='absolute w-[25vw] -z-10 top-3/4 left-0'>
-        <img src="/dish4.png" alt="" className='w-full h-full' />
+        <img src="https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/mebo8yobwwpl2ktp9dfc" alt="" className='w-full h-full' />
 
       </div>
       <div className='absolute w-[30vw] -z-10 top-0 right-0'>

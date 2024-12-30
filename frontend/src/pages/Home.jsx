@@ -33,10 +33,10 @@ function Home() {
         <h5 className='text-[5vw] sm:text=[3vw] md:text-[3vw] lg:text-[1.5vw] font-[cursive]  text-center md:text-right text-black underline underline-offset-2 decoration-white'  >Cook Better, Smarter with AI</h5>
       </div>
       <div className='absolute -z-10 w-full h-full top-0 left-0'>
-        <img src="/landing4a.png" alt="" className='object-cover object-center' />
+        <img src="https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/wjepzov6z9qsasyyeizr" alt="" className='object-cover object-center' />
       </div>
       <div className='block lg:hidden absolute w-[50vw] -z-10 bottom-0 left-0'>
-        <img src='/ingredient1.png' alt="" className='w-full h-full ' />
+        <img src='https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/m1zf6cl03jekyjo6sigm' alt="" className='w-full h-full ' />
 
       </div>
 

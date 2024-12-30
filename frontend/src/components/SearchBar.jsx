@@ -69,7 +69,6 @@ function SearchBar() {
 
   return (
     <>
-      {/* bg-gradient-to-r from-[#F9D126] to-[#EAB70A]  bg-[url('/home2r.png')]*/}
       <div className="relative w-full min-h-screen pt-20  bg-cover " >
         <form onSubmit={handleSubmit} className='w-full flex flex-col items-center gap-10'>
           <input
@@ -129,11 +128,11 @@ function SearchBar() {
           </button>
         </form>
         <div className='absolute -z-10 w-[80vw] sm:w-[60vw] md:w-[40vw]  -left-10 bottom-0 md:bottom-10 '>
-          <img src={'/ingredient2.png'} alt="" className='w-full h-full object-cover ' />
+          <img src={'https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/kzqpdclbburp8eilylzr'} alt="" className='w-full h-full object-cover ' />
         </div>
         {loading && (
           <div className='fixed top-0 left-0 w-full h-screen z-[9999] flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-lg  '>
-            <img src="./loading1.gif" alt="" className='w-[20vw] h-[20vw] rounded-full shadow-2xl shadow-gray-300 ' />
+            <img src="https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/zn54spow0ip9opvrfen3" alt="" className='w-[20vw] h-[20vw] rounded-full shadow-2xl shadow-gray-300 ' />
           </div>
         )}
       </div>
