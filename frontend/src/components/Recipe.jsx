@@ -28,7 +28,7 @@ function Recipe({ recipe, setViewRecipe }) {
                             <h4 className='w-full text-base  md:text-lg font-semibold underline decoration-yellow-400 text-left'>Required Ingredients: </h4>
                             <div className='w-[90%] md:w-[80%] p-2 grid grid-cols-1 md:grid-cols-2 '>
                                 {(recipe.TranslatedIngredients).split(',').map((ingredient) => (
-                                    <div className='capitalize px-2 py-1 font-[cursive] text-gray-700'>- {ingredient}</div>
+                                    <div className='capitalize px-2 py-1 font-serif md:font-[cursive]  text-gray-700'>- {ingredient}</div>
                                 ))}
                             </div>
                         </div>
@@ -38,10 +38,10 @@ function Recipe({ recipe, setViewRecipe }) {
                                 <h5 className='underline decoration-yellow-400 decoration-2 '>{recipe.TotalTimeInMins}min</h5>
                             </div>
                             <div className='w-[80%] mt-5' >
-                                <ol className='list-decimal'>
+                                <ol className='list-decimal z-10'>
                                     {(cleanedRecipeInst).map((step) => (
                                         (step) && (
-                                            <li className='mt-3 font-[cursive] text-base md:text-xl text-justify text-pretty md:tracking-wide text-gray-700'>{step}.</li>
+                                            <li className='mt-3 z-10 font-serif md:font-[cursive] text-base md:text-xl text-justify text-pretty md:tracking-wide text-gray-700'>{step}.</li>
                                         )
                                     ))}
                                 </ol>
@@ -54,7 +54,7 @@ function Recipe({ recipe, setViewRecipe }) {
                         <div className='absolute z-0 -top-16 left-0 w-[20vw] md:w-[10vw] '>
                             <img src="https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/flcqaleo9hlsbhyldb9j" alt="" />
                         </div>
-                        <div className='absolute z-0 top-1/4 right-0 w-[18vw] md:w-[10vw] '>
+                        <div className='absolute -z-0 top-1/4 right-0 w-[18vw] md:w-[10vw] '>
                             <img src="https://res.cloudinary.com/db0ijophz/image/upload/f_auto,q_auto/v1/ai-recipe-finder/u0r0pbuwwx0tyu83kpuk" alt="" />
                         </div>
                         <div className='absolute z-0 bottom-0 left-0 w-[20vw] md:w-[10vw] '>
