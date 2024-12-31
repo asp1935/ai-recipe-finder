@@ -13,7 +13,6 @@ const checkHealth = AsyncHandler(async (req, res) => {
                 .json(new APIResponse(500, {}, 'Internal Server Error: Missing API URL'));
         }
 
-        console.log('Checking health of the API:', apiUrl);
         const response = await axios.get(`${apiUrl}/`, { withCredentials: true });
 
         return res

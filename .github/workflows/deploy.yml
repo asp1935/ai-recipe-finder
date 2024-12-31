@@ -1,56 +1,55 @@
-name: Deploy to AWS
+# name: Deploy to AWS
+# on:
+#   push:
+#     branches:
+#       - main
 
-on:
-  push:
-    branches:
-      - main
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Checkout Code
+#         uses: actions/checkout@v3
       
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+#       - name: Set up SSH
+#         uses: webfactory/ssh-agent@v0.7.0
+#         with:
+#           ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
       
-      - name: Deploy Backend to EC2
-        run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
-            # Install prerequisites (uncomment these lines if needed)
-            sudo dnf update -y
-            sudo dnf install -y git
-            sudo dnf install -y docker
-            sudo service docker start
-            sudo usermod -aG docker $USER
-            sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-            sudo chmod +x /usr/local/bin/docker-compose
-            # Check if the project directory exists
-            if [ ! -d "/home/ec2-user/ai-recipe-finder" ]; then
-              echo "Directory /home/ec2-user/ai-recipe-finder does not exist. Cloning repository..."
-              cd /home/ec2-user
-              git clone https://github.com/yourusername/ai-recipe-finder.git
-            else
-              echo "Directory /home/ec2-user/ai-recipe-finder exists. Pulling latest changes..."
-              cd /home/ec2-user/ai-recipe-finder
-              git pull origin main
-            fi
+#       - name: Deploy Backend to EC2
+#         run: |
+#           ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
+#             # Install prerequisites (uncomment these lines if needed)
+#             sudo dnf update -y
+#             sudo dnf install -y git
+#             sudo dnf install -y docker
+#             sudo service docker start
+#             sudo usermod -aG docker $USER
+#             sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+#             sudo chmod +x /usr/local/bin/docker-compose
+#             # Check if the project directory exists
+#             if [ ! -d "/home/ec2-user/ai-recipe-finder" ]; then
+#               echo "Directory /home/ec2-user/ai-recipe-finder does not exist. Cloning repository..."
+#               cd /home/ec2-user
+#               git clone https://github.com/yourusername/ai-recipe-finder.git
+#             else
+#               echo "Directory /home/ec2-user/ai-recipe-finder exists. Pulling latest changes..."
+#               cd /home/ec2-user/ai-recipe-finder
+#               git pull origin main
+#             fi
 
-            # Navigate to the backend directory
-            cd /home/ec2-user/ai-recipe-finder/backend/
+#             # Navigate to the backend directory
+#             cd /home/ec2-user/ai-recipe-finder/backend/
 
-            # Set environment variables (if needed)
-            export PY_PORT="${{ secrets.PY_PORT }}"
-            export PY_CORS_ORIGIN="${{ secrets.PY_CORS_ORIGIN }}"
-            export EX_PORT="${{ secrets.EX_PORT }}"
-            export ORIGIN_ACCESS_URL="${{ secrets.ORIGIN_ACCESS_URL }}"
-            export MODEL_API_URL="${{ secrets.MODEL_API_URL}}"
+#             # Set environment variables (if needed)
+#             export PY_PORT="${{ secrets.PY_PORT }}"
+#             export PY_CORS_ORIGIN="${{ secrets.PY_CORS_ORIGIN }}"
+#             export EX_PORT="${{ secrets.EX_PORT }}"
+#             export ORIGIN_ACCESS_URL="${{ secrets.ORIGIN_ACCESS_URL }}"
+#             export MODEL_API_URL="${{ secrets.MODEL_API_URL}}"
 
-            # Restart Docker containers
-            docker-compose down
-            docker-compose up -d --build
-          EOF
+#             # Restart Docker containers
+#             docker-compose down
+#             docker-compose up -d --build
+#           EOF

@@ -20,3 +20,24 @@ export const getRecipe = async (userQuery, userIngredients) => {
         return error;
     }
 }
+
+
+export const startServer=async()=>{
+    if(!api_uri){
+        return;
+    }
+    try {
+        const expressRes =await axios.get(`${api_uri}`)
+        const modelRes=await axios.get(`${api_uri}/api/v1/recipe/`)
+        if(expressRes.data?.statusCode===200 && modelRes.data?.statusCode===200){
+            console.log('Working');
+        }
+        else{
+            console.log('Server is Down');
+        }
+
+    } catch (error) {
+        console.log('Server Issue');
+        
+    }
+}
