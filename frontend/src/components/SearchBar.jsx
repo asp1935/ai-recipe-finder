@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import data from './ingredients.json';
 import { getRecipe } from '../api/api';
 import RecipeList from './RecipeList';
-function SearchBar() {
+function SearchBar({SearchDivRef}) {
 
   const [recipeQuery, setRecipeQuery] = useState('');
   const [inputIngredient, setInputIngredient] = useState('');
@@ -69,7 +69,7 @@ function SearchBar() {
 
   return (
     <>
-      <div className="relative w-full min-h-screen pt-20  bg-cover " >
+      <div id='searchDiv' className="relative w-full min-h-screen pt-20  bg-cover "  >
         <form onSubmit={handleSubmit} className='w-full flex flex-col items-center gap-10'>
           <input
             type="text"
