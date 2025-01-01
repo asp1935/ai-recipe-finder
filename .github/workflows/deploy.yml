@@ -32,7 +32,7 @@
 #             if [ ! -d "/home/ec2-user/ai-recipe-finder" ]; then
 #               echo "Directory /home/ec2-user/ai-recipe-finder does not exist. Cloning repository..."
 #               cd /home/ec2-user
-#               git clone https://github.com/yourusername/ai-recipe-finder.git
+#               git clone https://github.com/asp1935/ai-recipe-finder.git
 #             else
 #               echo "Directory /home/ec2-user/ai-recipe-finder exists. Pulling latest changes..."
 #               cd /home/ec2-user/ai-recipe-finder
