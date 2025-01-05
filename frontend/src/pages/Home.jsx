@@ -1,5 +1,6 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useEffect, useRef, useState } from 'react'
 
 
@@ -8,6 +9,7 @@ function Home({ scrollTo }) {
   const scrollDownDivRef = useRef(null);
 
   useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const tl1 = gsap.timeline({});
     tl1.from(titleDivRef.current.children[0], {
       x: -200,

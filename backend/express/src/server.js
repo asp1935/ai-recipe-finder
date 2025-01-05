@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import { app } from './app.js';
 
+const port = process.env.EX_PORT || 8000;
 
 dotenv.config();
 
@@ -10,6 +11,6 @@ app.on("error",(err)=>{
 })
 
 
-app.listen(process.env.EX_PORT || 8000,()=>{
-    console.log(`Server is listing on ${process.env.EX_PORT || 8000}`);
+app.listen(port,()=>{
+    console.log(`Server is listing on ${port}`);
 })
