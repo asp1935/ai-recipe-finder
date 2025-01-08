@@ -27,11 +27,7 @@ app.get('/', async(req, res) => {
             .json(new APIResponse(500, {}, 'Internal Server Error: Missing API URL'));
     }
 
-    const response = await axios.get(`${apiUrl}`, {withCredentials: true, timeout: 70000, });
-    if(response.data.statusCode===200){
-        return res.status(200)
-        .json({ 'statusCode': 200, data: 'Both Servers are runing', 'message': 'Both Servers running Fine' })
-    }
+    
     return res.status(200)
         .json({ 'statusCode': 200, data: 'Server 1 is runing', 'message': 'Server 1 running Fine' })
 })
